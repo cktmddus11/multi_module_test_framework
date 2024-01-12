@@ -1,15 +1,38 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
+    id 'sample.spring3-conventions'
+
 
     id 'maven-publish'
+
+    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
+bootJar.enabled = false
+jar.enabled = true
 
 group 'maestro.quintet.crm'
-version '1.0.0'
+version '3.0.0'
 
 dependencies {
-    implementation project(':framework-data:jpa')
+    api project(':framework-data:jpa')
 
 }
+
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = 'maestro.quintet.crm' // groupId
+            artifactId = 'framework-data'           // artifactId
+            version = '4.0.0'       // version
+
+            // from components.java
+        }
+    }
+}
+
