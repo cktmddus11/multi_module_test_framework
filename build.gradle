@@ -1,0 +1,26 @@
+plugins {
+    id 'sample.java17-conventions'
+    id 'sample.repositories'
+
+   // id 'maven-publish'
+}
+
+group 'maestro.quintet.crm'
+version '2.0.0'
+
+
+/*
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'maestro.quintet.crm' // groupId
+            artifactId = 'framework'           // artifactId
+            version = '1.0.0'       // version
+
+            from components.java
+        }
+    }
+}
+
+
+*/

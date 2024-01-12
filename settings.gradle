@@ -1,0 +1,6 @@
+rootProject.name = "cals-platz-sample-framework"
+
+include 'framework-data'
+include 'framework-data:jpa'
+
+include 'framework-web'
