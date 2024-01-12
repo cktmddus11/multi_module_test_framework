@@ -1,0 +1,15 @@
+plugins {
+    id 'sample.java17-conventions'
+    id 'sample.repositories'
+
+    id 'maven-publish'
+}
+
+
+group 'maestro.quintet.crm'
+version '1.0.0'
+
+dependencies {
+    implementation project(':framework-data:jpa')
+
+}

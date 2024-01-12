@@ -2,20 +2,28 @@ plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
 
-   // id 'maven-publish'
+    id 'maven-publish'
+
+//    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+//    id 'io.spring.dependency-management' version '1.1.0'
+
 }
 
 group 'maestro.quintet.crm'
-version '3.0.0'
+version '1.0.0'
 
+dependencies {
+    api project(':framework-web')
+    api project(':framework-data')
 
-/*
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm' // groupId
             artifactId = 'framework'           // artifactId
-            version = '1.0.0'       // version
+            version = '2.0.0'       // version
 
             from components.java
         }
@@ -23,4 +31,3 @@ publishing {
 }
 
 
-*/
