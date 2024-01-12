@@ -1,7 +1,7 @@
 plugins {
-    id 'java'
-    id 'java-library'
-//    id 'sample.java17-conventions'
+//    id 'java'
+//    id 'java-library'
+     id 'sample.java17-conventions'
 //    id 'sample.spring3-conventions'
     id 'maven-publish' // maven 사용
 
@@ -38,9 +38,8 @@ test {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
             from components.java
-
             versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')
