@@ -3,28 +3,32 @@ plugins {
     id 'sample.repositories'
 
     id 'maven-publish'
-
-//    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
-//    id 'io.spring.dependency-management' version '1.1.0'
-
 }
 jar.enabled = true
-
-group 'maestro.quintet.crm'
-version '0.0.1'
+group = 'maestro.quintet.crm'
+version = '0.1.0'
 
 dependencies {
     api project(':framework-web')
     api project(':framework-data')
-    api project(':framework-data:jpa')
 }
 
 publishing {
+    repositories {
+        maven {
+            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
+            allowInsecureProtocol true
+            credentials {
+                username ''
+                password ''
+            }
+        }
+    }
     publications {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm' // groupId
             artifactId = 'framework'           // artifactId
-            version = '0.0.1'       // version
+            version = '0.0.2'       // version
 
             from components.java
         }

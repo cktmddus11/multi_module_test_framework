@@ -10,8 +10,6 @@ plugins {
 
 }
 
-group 'maestro.quintet.crm'
-version '0.0.1'
 
 bootJar.enabled = false
 jar.enabled = true
@@ -32,11 +30,10 @@ test {
 publishing {
     publications {
         maven(MavenPublication) {
-            from components.java
-            groupId = 'maestro.quintet.crm.framework-data' // groupId
+            groupId = 'maestro.quintet.crm.framework.framework-data' // groupId
             artifactId = 'jpa'           // artifactId
             version = '0.0.1'       // version
-
+            from components.java
         }
     }
 }

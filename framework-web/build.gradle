@@ -7,10 +7,6 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
-group 'maestro.quintet.crm'
-version '0.0.1'
-
-//
 bootJar.enabled = false
 jar.enabled = true
 
@@ -35,9 +31,14 @@ test {
 
 
 publishing {
+
     publications {
         maven(MavenPublication) {
+            groupId = 'maestro.quintet.crm.framework' // groupId
+            artifactId = 'framework-web'           // artifactId
+            version = '0.0.1'       // version
             from components.java
+
             versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')
@@ -46,12 +47,6 @@ publishing {
                     fromResolutionResult()
                 }
             }
-
-            groupId = 'maestro.quintet.crm' // groupId
-            artifactId = 'framework-web'           // artifactId
-            version = '0.0.1'       // version
-
-           // from components.java
         }
     }
 }
