@@ -1,6 +1,4 @@
 plugins {
-//    id 'java'
-//    id 'java-library'
      id 'sample.java17-conventions'
 //    id 'sample.spring3-conventions'
     id 'maven-publish' // maven 사용
@@ -10,7 +8,7 @@ plugins {
 }
 
 group 'maestro.quintet.crm'
-version '3.0.0'
+version '0.0.1'
 
 //
 bootJar.enabled = false
@@ -51,7 +49,7 @@ publishing {
 
             groupId = 'maestro.quintet.crm' // groupId
             artifactId = 'framework-web'           // artifactId
-            version = '3.0.0'       // version
+            version = '0.0.1'       // version
 
            // from components.java
         }

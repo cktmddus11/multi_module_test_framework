@@ -4,20 +4,19 @@ plugins {
 
     id 'maven-publish'
 
-    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
-    id 'io.spring.dependency-management' version '1.1.0'
+//    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+//    id 'io.spring.dependency-management' version '1.1.0'
 
 }
+jar.enabled = true
 
 group 'maestro.quintet.crm'
-version '3.0.0'
+version '0.0.1'
 
 dependencies {
     api project(':framework-web')
-//    api project(':framework-data')
-//    api project(':framework-data:jpa')
-
-
+    api project(':framework-data')
+    api project(':framework-data:jpa')
 }
 
 publishing {
@@ -25,7 +24,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm' // groupId
             artifactId = 'framework'           // artifactId
-            version = '3.0.0'       // version
+            version = '0.0.1'       // version
 
             from components.java
         }
