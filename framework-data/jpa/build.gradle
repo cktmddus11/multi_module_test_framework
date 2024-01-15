@@ -33,7 +33,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             from components.java
-            groupId = 'maestro.quintet.crm' // groupId
+            groupId = 'maestro.quintet.crm.framework-data' // groupId
             artifactId = 'jpa'           // artifactId
             version = '0.0.1'       // version
 
