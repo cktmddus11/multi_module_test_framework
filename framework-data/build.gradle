@@ -1,36 +1,16 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
-    id 'maven-publish'
+    id 'sample.publications'
+
 }
 
-jar.enabled = true
+group = 'maestro.quintet.crm.framework'
 
 
 dependencies {
-    api project(':framework-data:jpa')
+    implementation project(':framework-data:jpa')
 }
 
 
-
-publishing {
-    repositories {
-        maven {
-            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
-            allowInsecureProtocol true
-            credentials {
-                username 'admin'
-                password 'Quintet001.!'
-            }
-        }
-    }
-    publications {
-        maven(MavenPublication) {
-            groupId = 'maestro.quintet.crm.framework' // groupId
-            artifactId = 'framework-data'           // artifactId
-            version = '0.0.1'       // version
-            from components.java
-        }
-    }
-}
 

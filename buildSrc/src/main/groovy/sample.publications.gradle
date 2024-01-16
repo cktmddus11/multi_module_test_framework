@@ -1,0 +1,35 @@
+plugins {
+    id 'maven-publish'
+}
+
+publishing {
+    repositories {
+        maven {
+            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
+            allowInsecureProtocol true
+            credentials {
+                username ''
+                password ''
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+           // groupId = 'maestro.quintet.crm'         // groupId
+          //  artifact = 'framework'
+            version project.version
+            from components.java
+
+            /* versionMapping {
+                 usage('java-api') {
+                     fromResolutionOf('runtimeClasspath')
+                 }
+                 usage('java-runtime') {
+                     fromResolutionResult()
+                 }
+             }*/
+        }
+    }
+}
+
+

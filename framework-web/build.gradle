@@ -1,13 +1,17 @@
 plugins {
      id 'sample.java17-conventions'
     id 'sample.repositories'
-    id 'maven-publish' // maven 사용
+    id 'sample.publications'
 
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
 
+jar.enabled = true
+bootJar.enabled = false
+
+group = 'maestro.quintet.crm.framework'
 
 dependencies {
 
@@ -21,38 +25,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-
-
-publishing {
-    repositories {
-        maven {
-            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
-            allowInsecureProtocol true
-            credentials {
-                username 'admin'
-                password 'Quintet001.!'
-            }
-        }
-    }
-    publications {
-        maven(MavenPublication) {
-            groupId = 'maestro.quintet.crm.framework' // groupId
-            artifactId = 'framework-web'           // artifactId
-            version = '0.0.1'       // version
-            from components.java
-
-           /* versionMapping {
-                usage('java-api') {
-                    fromResolutionOf('runtimeClasspath')
-                }
-                usage('java-runtime') {
-                    fromResolutionResult()
-                }
-            }*/
-        }
-    }
 }
 
 
