@@ -1,19 +1,21 @@
 ```
 📦 
-.gitignore
-build.gradle
-buildSrc
-build.gradle
-src
-main
-groovy
-sample.java17-conventions.gradle
-sample.repositories.gradle
+├─ .gitignore
+├─ README.md
+├─ buildSrc
+│  ├─ build.gradle
+│  └─ src
+│     └─ main
+│        └─ groovy
+│           ├─ sample.java17-conventions.gradle
+│           ├─ sample.publish-conventions.gradle
+│           ├─ sample.repositories.gradle
 │           └─ sample.spring3-conventions.gradle
 ├─ framework-data
-│  ├─ build.gradle
-jpa
-│     └─ build.gradle
+├─  ├─ jpa
+│   └─ build.gradle
+├─ build.gradle
+│ 
 ├─ framework-web
 │  ├─ build.gradle
 │  └─ src
