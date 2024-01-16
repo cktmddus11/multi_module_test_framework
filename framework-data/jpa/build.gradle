@@ -28,6 +28,16 @@ test {
 
 
 publishing {
+    repositories {
+        maven {
+            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'Quintet001.!'
+            }
+        }
+    }
     publications {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm.framework.framework-data' // groupId

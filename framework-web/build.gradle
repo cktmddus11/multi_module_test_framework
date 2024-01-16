@@ -1,24 +1,19 @@
 plugins {
      id 'sample.java17-conventions'
-//    id 'sample.spring3-conventions'
+    id 'sample.repositories'
     id 'maven-publish' // maven 사용
 
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
-bootJar.enabled = false
-jar.enabled = true
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 
 
 dependencies {
-    api 'org.springframework.boot:spring-boot-starter'
-    api 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'org.springframework:spring-web'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
@@ -31,7 +26,16 @@ test {
 
 
 publishing {
-
+    repositories {
+        maven {
+            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'Quintet001.!'
+            }
+        }
+    }
     publications {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm.framework' // groupId
@@ -39,14 +43,14 @@ publishing {
             version = '0.0.1'       // version
             from components.java
 
-            versionMapping {
+           /* versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')
                 }
                 usage('java-runtime') {
                     fromResolutionResult()
                 }
-            }
+            }*/
         }
     }
 }

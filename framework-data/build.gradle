@@ -1,7 +1,6 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
-
     id 'maven-publish'
 }
 
@@ -15,6 +14,16 @@ dependencies {
 
 
 publishing {
+    repositories {
+        maven {
+            url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'Quintet001.!'
+            }
+        }
+    }
     publications {
         maven(MavenPublication) {
             groupId = 'maestro.quintet.crm.framework' // groupId

@@ -19,8 +19,8 @@ publishing {
             url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
             allowInsecureProtocol true
             credentials {
-                username ''
-                password ''
+                username 'admin'
+                password 'Quintet001.!'
             }
         }
     }
