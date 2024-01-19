@@ -2,6 +2,7 @@ plugins {
      id 'sample.java17-conventions'
     id 'sample.repositories'
     id 'sample.publications'
+    id 'sample.spring3-conventions'
 
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
@@ -17,7 +18,7 @@ dependencies {
 
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
-    implementation 'org.springframework:spring-web'
+    api 'org.springframework:spring-web'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'

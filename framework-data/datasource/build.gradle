@@ -1,0 +1,30 @@
+plugins {
+    id 'sample.java17-conventions'
+    id 'sample.repositories'
+    id 'sample.spring3-conventions'
+    id 'sample.publications'
+    id 'sample.lombok-conventions'
+
+    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+    id 'io.spring.dependency-management' version '1.1.0'
+
+}
+group = 'maestro.quintet.crm.framework.framework-data'
+
+
+bootJar.enabled = false
+jar.enabled = true
+
+description = "datasource"
+
+dependencies {
+    api 'org.springframework.boot:spring-boot-starter-jdbc:3.1.4'  // datasourceRouter추상, hikari 처리
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+

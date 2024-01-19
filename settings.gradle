@@ -1,9 +1,8 @@
 rootProject.name = 'framework'
 
-
-
 include 'framework-data'
 include 'framework-data:jpa'
+include 'framework-data:datasource'
 
 include 'framework-web'
 

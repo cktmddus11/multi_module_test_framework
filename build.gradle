@@ -1,26 +1,18 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
-    id 'sample.spring3-conventions'
+//    id 'sample.spring3-conventions'
 
     id 'sample.publications'
-
-    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
-    id 'io.spring.dependency-management' version '1.1.0'
+//
+//    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+//    id 'io.spring.dependency-management' version '1.1.0'
 
 }
-jar.enabled = true
-bootJar.enabled = false
+//jar.enabled = true
+//bootJar.enabled = false
 
 group = 'maestro.quintet.crm'
-
-
-/*configure(allprojects){ project ->
-    group = "maestro.quintet.crm.framework-$project.description"
-}
-configure(subprojects){ project ->
-    group = "maestro.quintet.crm.framework.framework-$project.description"
-}*/
 
 dependencies {
     api project(':framework-web')
