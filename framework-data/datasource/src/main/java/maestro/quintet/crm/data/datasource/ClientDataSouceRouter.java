@@ -1,8 +1,6 @@
-package maestro.quintet.crm.datasource;
+package maestro.quintet.crm.data.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
-
-import javax.sql.DataSource;
 
 /**
  * @author sycha

@@ -1,4 +1,4 @@
-package maestro.quintet.crm.datasource;
+package maestro.quintet.crm.data.datasource;
 
 /**
  * @author sycha
