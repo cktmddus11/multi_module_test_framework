@@ -1,18 +1,45 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
-//    id 'sample.spring3-conventions'
-
+    id 'sample.spring3-conventions'
     id 'sample.publications'
-//
-//    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
-//    id 'io.spring.dependency-management' version '1.1.0'
+    id 'sample.lombok-conventions'
 
+    id 'org.springframework.boot' version '3.1.4' // '${springBootVersion}'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
-//jar.enabled = true
-//bootJar.enabled = false
 
 group = 'maestro.quintet.crm'
+
+allprojects {
+    apply plugin: 'sample.java17-conventions'
+    apply plugin: 'sample.repositories'
+    apply plugin: 'sample.spring3-conventions'
+    apply plugin: 'sample.publications'
+    apply plugin: 'sample.lombok-conventions'
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    jar {
+        enabled = true
+    }
+
+    tasks.named('bootJar') {
+        enabled = false
+    }
+
+   // group = 'maestro.quintet.crm.framework'
+}
+
+ext {
+    subModuleProjects = subprojects.findAll { it.name.startsWith("framework-") }
+    subSubModuleProjects = subprojects.findAll { !it.name.startsWith("framework") }
+}
+configure(subModuleProjects) { project ->
+
+
+}
 
 dependencies {
     api project(':framework-web')

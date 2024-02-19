@@ -1,17 +1,3 @@
-plugins {
-     id 'sample.java17-conventions'
-    id 'sample.repositories'
-    id 'sample.publications'
-    id 'sample.spring3-conventions'
-
-    id 'org.springframework.boot' version '3.1.4'
-    id 'io.spring.dependency-management' version '1.1.0'
-}
-
-
-jar.enabled = true
-bootJar.enabled = false
-
 group = 'maestro.quintet.crm.framework'
 
 dependencies {

@@ -1,17 +1,8 @@
-plugins {
-    id 'sample.java17-conventions'
-    id 'sample.repositories'
-    id 'sample.publications'
-
-}
-
 group = 'maestro.quintet.crm.framework'
-
 
 dependencies {
     implementation project(':framework-data:jpa')
     implementation project(':framework-data:datasource')
-
 }
 
 
